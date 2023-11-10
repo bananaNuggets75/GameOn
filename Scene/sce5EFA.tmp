@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://clq6n11o6c7pc"]
+
+[ext_resource type="Texture2D" uid="uid://tmukym1he5oe" path="res://Assets/HighResIloilo-01-01.png" id="1_7sbya"]
+[ext_resource type="PackedScene" uid="uid://brwksgk2rwlfj" path="res://Scene/draggable_object.tscn" id="1_oha5x"]
+[ext_resource type="PackedScene" uid="uid://blhhx1yd58tuw" path="res://Scene/object.tscn" id="2_j1vpo"]
+[ext_resource type="PackedScene" uid="uid://cr25ksld56hyc" path="res://Scene/trash_bin.tscn" id="3_guj63"]
+[ext_resource type="PackedScene" uid="uid://b8hsbq1wt1da5" path="res://Scene/coin_progress_bar.tscn" id="3_ylfmb"]
+[ext_resource type="PackedScene" uid="uid://ceaglevr1pown" path="res://Scene/biscoho.tscn" id="4_aihh3"]
+[ext_resource type="PackedScene" uid="uid://4eb0ben23awn" path="res://Scene/empty_bowl.tscn" id="6_thm3w"]
+
+[node name="scene" type="Node2D"]
+position = Vector2(0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1149.0
+offset_bottom = 646.0
+texture = ExtResource("1_7sbya")
+expand_mode = 1
+
+[node name="PreparedStation1" parent="." instance=ExtResource("2_j1vpo")]
+position = Vector2(150, 427)
+
+[node name="PreparedStation2" parent="." instance=ExtResource("2_j1vpo")]
+position = Vector2(346, 428)
+
+[node name="PreparedStation3" parent="." instance=ExtResource("2_j1vpo")]
+position = Vector2(553, 426)
+
+[node name="PreparedStation4" parent="." instance=ExtResource("2_j1vpo")]
+position = Vector2(750, 428)
+
+[node name="Cup1" parent="." instance=ExtResource("1_oha5x")]
+position = Vector2(517, 533)
+
+[node name="Cup2" parent="." instance=ExtResource("1_oha5x")]
+position = Vector2(595, 535)
+
+[node name="Cup3" parent="." instance=ExtResource("1_oha5x")]
+position = Vector2(672, 535)
+
+[node name="Cup4" parent="." instance=ExtResource("1_oha5x")]
+position = Vector2(749, 537)
+
+[node name="Cup5" parent="." instance=ExtResource("1_oha5x")]
+position = Vector2(516, 570)
+
+[node name="Cup6" parent="." instance=ExtResource("1_oha5x")]
+position = Vector2(596, 572)
+
+[node name="Cup7" parent="." instance=ExtResource("1_oha5x")]
+position = Vector2(672, 573)
+
+[node name="Cup8" parent="." instance=ExtResource("1_oha5x")]
+position = Vector2(751, 575)
+
+[node name="Coin_Progress_Bar" parent="." instance=ExtResource("3_ylfmb")]
+position = Vector2(939, 246)
+
+[node name="Biscocho1" parent="." groups=["draggable"] instance=ExtResource("4_aihh3")]
+position = Vector2(122, 552)
+
+[node name="Biscocho2" parent="." groups=["draggable"] instance=ExtResource("4_aihh3")]
+position = Vector2(246, 552)
+
+[node name="Biscocho3" parent="." groups=["draggable"] instance=ExtResource("4_aihh3")]
+position = Vector2(365, 552)
+
+[node name="TrashBin" parent="." instance=ExtResource("3_guj63")]
+position = Vector2(993, 654)
+
+[node name="Bowl1" parent="." groups=["draggable"] instance=ExtResource("6_thm3w")]
+position = Vector2(932, 392)
+
+[node name="Bowl2" parent="." groups=["draggable"] instance=ExtResource("6_thm3w")]
+position = Vector2(1047, 392)
+
+[node name="Bowl3" parent="." groups=["draggable"] instance=ExtResource("6_thm3w")]
+position = Vector2(933, 436)
+
+[node name="Bowl4" parent="." groups=["draggable"] instance=ExtResource("6_thm3w")]
+position = Vector2(1047, 437)
