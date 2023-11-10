@@ -3,10 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://gl0ek3skp860" path="res://prep_area.tscn" id="1_6jm1y"]
 [ext_resource type="PackedScene" uid="uid://despj1sjdibij" path="res://object.tscn" id="1_oha5x"]
 [ext_resource type="PackedScene" uid="uid://0o5pcnoh5uxj" path="res://obj.tscn" id="2_lmd6v"]
-[ext_resource type="Script" path="res://trash_bin.gd" id="4_ao3vo"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7ke2"]
-size = Vector2(49, 161.5)
+[ext_resource type="PackedScene" uid="uid://cr25ksld56hyc" path="res://trash_bin.tscn" id="3_guj63"]
+[ext_resource type="PackedScene" uid="uid://blm2ac7pjtxxu" path="res://item_soup.tscn" id="4_r5mmq"]
 
 [node name="stall" type="Node2D"]
 position = Vector2(0, 1)
@@ -115,43 +113,30 @@ offset_right = 571.0
 offset_bottom = 620.0
 color = Color(0.407843, 0.407843, 0.407843, 1)
 
-[node name="TrashArea" type="ColorRect" parent="."]
+[node name="TrashArea" type="ColorRect" parent="." groups=["trashbin"]]
 offset_left = 610.0
 offset_top = 450.0
 offset_right = 659.0
 offset_bottom = 612.0
 color = Color(0.407843, 0.407843, 0.407843, 1)
 
-[node name="Area2D" type="Area2D" parent="TrashArea"]
-position = Vector2(27, 78)
-script = ExtResource("4_ao3vo")
+[node name="TrashBin" parent="TrashArea" instance=ExtResource("3_guj63")]
+position = Vector2(26, 81)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashArea/Area2D"]
-shape = SubResource("RectangleShape2D_r7ke2")
-
-[node name="ColorRect" type="ColorRect" parent="TrashArea/Area2D"]
-offset_left = -24.0
-offset_top = -80.0
-offset_right = 26.0
-offset_bottom = 81.0
+[node name="Soup" parent="." groups=["object"] instance=ExtResource("4_r5mmq")]
+position = Vector2(735, 504)
 
 [node name="Object1" parent="." groups=["object"] instance=ExtResource("2_lmd6v")]
-position = Vector2(727, 496)
+position = Vector2(811, 500)
 
 [node name="Object2" parent="." groups=["object"] instance=ExtResource("2_lmd6v")]
-position = Vector2(807, 494)
+position = Vector2(890, 500)
 
 [node name="Object3" parent="." groups=["object"] instance=ExtResource("2_lmd6v")]
-position = Vector2(728, 575)
+position = Vector2(808, 576)
 
 [node name="Object4" parent="." groups=["object"] instance=ExtResource("2_lmd6v")]
-position = Vector2(886, 495)
+position = Vector2(734, 576)
 
 [node name="Object5" parent="." groups=["object"] instance=ExtResource("2_lmd6v")]
-position = Vector2(808, 575)
-
-[node name="Object6" parent="." groups=["object"] instance=ExtResource("2_lmd6v")]
 position = Vector2(887, 576)
-
-[connection signal="area_entered" from="TrashArea/Area2D" to="TrashArea/Area2D" method="_on_area_entered"]
-[connection signal="body_entered" from="TrashArea/Area2D" to="TrashArea/Area2D" method="_on_body_entered"]

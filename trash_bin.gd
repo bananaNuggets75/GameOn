@@ -1,17 +1,22 @@
-extends Node2D
-
-var color_rect: ColorRect
-
-func _ready() -> void:
-	# Assuming you've added a ColorRect node named "ColorRect" as a child
-	color_rect = $ColorRect
+extends Area2D
 
 func _on_Area2D_body_entered(body: Node) -> void:
 	if body.is_in_group("object"):
-		color_rect.color = Color(1.0, 0.5, 0.5)  # Brighter red
-		body.queue_free() 
+		# Assuming that the object has a "Draggable" script
+		if body.has_method("_on_drag_and_drop"):
+			body._on_drag_and_drop(global_position)
+		else:
+			body.queue_free()
+	elif body.is_in_group("trashbin"):
+		# The object entered the trash bin area
+		if body.has_method("delete_object"):
+			body.delete_object()
+		else:
+			body.queue_free()
 
-# You can also handle area_entered if needed
-func _on_Area2D_area_entered(area: Area2D) -> void:
-	# Handle any additional logic when an area enters the trash bin
-	pass
+
+
+
+
+
+
