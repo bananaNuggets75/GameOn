@@ -1,20 +1,15 @@
-extends Area2D
+extends Node2D
 
-var is_inside_trash = false
+var color_rect: ColorRect
 
-func _ready():
-	modulate = Color(Color.DARK_RED, 0.7)
-# Called when an object enters the trash bin area
-
-func _process(delta):
-	if Global.is_dragging:
-		visible = true
-	else:
-		visible = false
+func _ready() -> void:
+	# Assuming you've added a ColorRect node named "ColorRect" as a child
+	color_rect = $ColorRect
 
 func _on_Area2D_body_entered(body: Node) -> void:
-	if body is Object:  # Replace with the actual object type you want to delete
-		body.queue_free()  # Remove the object from the scene
+	if body.is_in_group("object"):
+		color_rect.color = Color(1.0, 0.5, 0.5)  # Brighter red
+		body.queue_free() 
 
 # You can also handle area_entered if needed
 func _on_Area2D_area_entered(area: Area2D) -> void:
