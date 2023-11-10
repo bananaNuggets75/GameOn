@@ -41,4 +41,3 @@ func _on_area_2d_body_exited(body):
 	if body.is_in_group('Dropable'):
 		is_inside_dropable = false
 		body.modulate = Color(Color.DARK_OLIVE_GREEN, 0.7)
-
