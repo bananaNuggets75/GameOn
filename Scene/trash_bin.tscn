@@ -4,21 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://cwjta2qo4m0oo" path="res://Assets/iloilo/trashcan.png" id="2_1o1rd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6s38"]
-size = Vector2(233, 257)
+size = Vector2(233, 238)
 
-[node name="Area2D" type="Area2D" groups=["trashbin"]]
-position = Vector2(1.62069, 26.9804)
-scale = Vector2(0.810347, 1.08192)
+[node name="StaticBody2D" type="StaticBody2D" groups=["trashbin"]]
 script = ExtResource("1_n6lcw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["trashbin"]]
-position = Vector2(-1.5, -25.5)
+position = Vector2(0.468083, -50)
 shape = SubResource("RectangleShape2D_j6s38")
 
-[node name="Sprite2D" type="Sprite2D" parent="." groups=["trashbin"]]
-position = Vector2(-1.99999, -26.7861)
-scale = Vector2(1.23404, 0.924283)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -49)
+scale = Vector2(1.24053, 0.853402)
 texture = ExtResource("2_1o1rd")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]

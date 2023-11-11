@@ -5,8 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tt7fe"]
 size = Vector2(80, 80)
 
-[node name="StaticBody2D" type="StaticBody2D" groups=["Dropable"]]
-input_pickable = true
+[node name="Area2D" type="Area2D" groups=["Dropable"]]
 script = ExtResource("1_7imed")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Dropable"]]
@@ -17,3 +16,6 @@ offset_left = -40.0
 offset_top = -40.0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

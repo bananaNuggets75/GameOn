@@ -16,3 +16,4 @@ func sellProduct():
 # Update the coin container based on the number of coins sold
 func updateCoinContainer():
 	value = coinsSold % maxCoins
+	

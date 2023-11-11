@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://xooyfka4ruqs"]
+
+[ext_resource type="Script" path="res://customers.gd" id="1_4s45c"]
+[ext_resource type="Texture2D" uid="uid://dn7sopulmekh6" path="res://Assets/character/happy customer 01.png" id="1_sbxtc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pj44"]
+size = Vector2(185, 352)
+
+[node name="Cust2" type="Area2D"]
+script = ExtResource("1_4s45c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.773833, 0.708502)
+texture = ExtResource("1_sbxtc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -2)
+shape = SubResource("RectangleShape2D_3pj44")

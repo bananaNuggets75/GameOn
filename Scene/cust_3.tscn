@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu8if8b2k7a5p"]
+
+[ext_resource type="Texture2D" uid="uid://seon8uodqkg" path="res://Assets/character/sad face customer 01.png" id="1_jxssv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bau5m"]
+size = Vector2(174, 335)
+
+[node name="Cust3" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7375, 0.682004)
+texture = ExtResource("1_jxssv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -2.5)
+shape = SubResource("RectangleShape2D_bau5m")

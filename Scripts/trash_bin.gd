@@ -1,6 +1,13 @@
-extends Area2D
+extends StaticBody2D
 
-func _on_Area2D_body_entered(body: Node) -> void:
-	if body.is_in_group("trashbin"):
-		body.queue_free()
-		get_parent().queue_free()
+
+func _ready():
+	modulate = Color(Color.GRAY, 1)
+
+func _process(delta):
+	if Global.is_dragging:
+		visible = true
+
+
+
+

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bahi2hob57v1w"]
+
+[ext_resource type="Script" path="res://customers.gd" id="1_7di4e"]
+[ext_resource type="Texture2D" uid="uid://b2r36841uk2ie" path="res://Assets/character/happy beardedman.png" id="1_vhscb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xq2op"]
+size = Vector2(190, 343)
+
+[node name="Cust1" type="Area2D"]
+script = ExtResource("1_7di4e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.8125, 0.709979)
+texture = ExtResource("1_vhscb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_xq2op")

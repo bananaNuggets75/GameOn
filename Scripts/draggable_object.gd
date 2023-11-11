@@ -42,7 +42,8 @@ func _on_area_2d_body_entered(body: StaticBody2D):
 		body_ref = body
 	elif body.is_in_group('trashbin'):
 		# The object entered the trash bin area
-		queue_free()  # Delete the object
+		body.queue_free() 
+
 
 func _process(delta):
 	if draggable:
@@ -55,8 +56,9 @@ func _process(delta):
 			Global.is_dragging = false
 			var tween = get_tree().create_tween()
 			if is_inside_dropable:
+				var new_node = self.duplicate()
 				tween.tween_property(self, "position", body_ref.position, 0.2).set_ease(Tween.EASE_OUT)
-
-
+				new_node.position = initialPos
+				get_parent().add_child(new_node)
 
 
