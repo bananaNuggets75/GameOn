@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://du34wu0f4nowj"]
+
+[ext_resource type="Script" path="res://Pause/pause_menu.gd" id="1_d4hsu"]
+[ext_resource type="Theme" uid="uid://bw2dusvucubil" path="res://Pause/game_theme.tres" id="2_jnrcy"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d4hsu")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.565
+anchor_top = 0.59
+anchor_right = 0.565
+anchor_bottom = 0.59
+offset_left = -144.88
+offset_top = -106.32
+offset_right = 36.12
+offset_bottom = 8.67999
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_jnrcy")
+text = "=PAUSED="
+
+[node name="Save" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_jnrcy")
+text = "Save"
+
+[node name="Load" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_jnrcy")
+text = "Load"
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_jnrcy")
+text = "Resume"
+
+[node name="Exit" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_jnrcy")
+text = "Exit"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
