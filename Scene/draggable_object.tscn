@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://brwksgk2rwlfj"]
 
-[ext_resource type="Script" path="res://Scripts/draggable_object.gd" id="1_xh88d"]
+[ext_resource type="Script" path="res://object_duplicate.gd" id="1_472yy"]
 [ext_resource type="Texture2D" uid="uid://btkgo75fs2clo" path="res://Assets/iloilo/mug.png" id="2_7lvd0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab2l3"]
@@ -8,7 +8,7 @@ size = Vector2(70, 49.875)
 
 [node name="Object" type="Node2D" groups=["draggable"]]
 position = Vector2(300, 200)
-script = ExtResource("1_xh88d")
+script = ExtResource("1_472yy")
 
 [node name="Icon" type="Sprite2D" parent="." groups=["draggable"]]
 position = Vector2(7.62939e-06, -1.98145)

@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://ceaglevr1pown"]
 
-[ext_resource type="Script" path="res://Scripts/draggable_object.gd" id="1_dd4rg"]
 [ext_resource type="Texture2D" uid="uid://0v0uocg30cdy" path="res://Assets/iloilo/re-bisocho.png" id="1_kimm8"]
+[ext_resource type="Script" path="res://object_duplicate.gd" id="1_qftqj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5w2i"]
 size = Vector2(114, 126)
 
 [node name="Biscocho" type="Node2D"]
-script = ExtResource("1_dd4rg")
+script = ExtResource("1_qftqj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["dropable"]]
 scale = Vector2(1.27247, 1)

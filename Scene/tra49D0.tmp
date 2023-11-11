@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://cr25ksld56hyc"]
+[gd_scene load_steps=3 format=3 uid="uid://cr25ksld56hyc"]
 
-[ext_resource type="Script" path="res://Scripts/trash_bin.gd" id="1_n6lcw"]
 [ext_resource type="Texture2D" uid="uid://cwjta2qo4m0oo" path="res://Assets/iloilo/trashcan.png" id="2_1o1rd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6s38"]
@@ -9,16 +8,15 @@ size = Vector2(233, 257)
 [node name="Area2D" type="Area2D" groups=["trashbin"]]
 position = Vector2(1.62069, 26.9804)
 scale = Vector2(0.810347, 1.08192)
-script = ExtResource("1_n6lcw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["trashbin"]]
 position = Vector2(-1.5, -25.5)
 shape = SubResource("RectangleShape2D_j6s38")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["trashbin"]]
-position = Vector2(-1.99999, -26.7861)
+position = Vector2(-2, -24.9375)
 scale = Vector2(1.23404, 0.924283)
 texture = ExtResource("2_1o1rd")
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]

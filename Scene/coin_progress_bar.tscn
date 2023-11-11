@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8hsbq1wt1da5"]
+[gd_scene load_steps=4 format=3 uid="uid://b8hsbq1wt1da5"]
 
 [ext_resource type="Texture2D" uid="uid://btpal7ctnbso" path="res://Assets/iloilo/empty jar.png" id="1_2dbk1"]
+[ext_resource type="Script" path="res://Scripts/coin_progress_bar.gd" id="1_3ply8"]
 [ext_resource type="Texture2D" uid="uid://drx4h6uj2pw01" path="res://Assets/iloilo/full jar.png" id="2_kxnsl"]
 
-[node name="Coin_Progress_Bar" type="Node2D"]
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="TextureProgressBar" type="TextureProgressBar"]
 offset_right = 107.0
 offset_bottom = 148.0
-value = 50.0
+step = 5.0
 fill_mode = 3
 texture_under = ExtResource("1_2dbk1")
 texture_progress = ExtResource("2_kxnsl")
+script = ExtResource("1_3ply8")
