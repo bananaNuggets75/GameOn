@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvrrdaqxjohem"]
+
+[ext_resource type="Texture2D" uid="uid://seon8uodqkg" path="res://Assets/character/sad face customer 01.png" id="1_jxssv"]
+
+[node name="cust3" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(176, 274)
+texture = ExtResource("1_jxssv")

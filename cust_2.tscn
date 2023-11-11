@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://w5pmx4u2e0tj"]
+
+[ext_resource type="Texture2D" uid="uid://dn7sopulmekh6" path="res://Assets/character/happy customer 01.png" id="1_sbxtc"]
+
+[node name="cust2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(196, 287)
+texture = ExtResource("1_sbxtc")

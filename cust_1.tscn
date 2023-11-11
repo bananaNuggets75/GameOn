@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmidoft7dj85c"]
+
+[ext_resource type="Texture2D" uid="uid://b2r36841uk2ie" path="res://Assets/character/happy beardedman.png" id="1_vhscb"]
+
+[node name="cust1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(165, 73)
+texture = ExtResource("1_vhscb")
