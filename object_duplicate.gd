@@ -15,7 +15,6 @@ func _ready() -> void:
 func _on_Area2D_body_entered(body: Node) -> void:
 	if body.is_in_group("Dropable"):
 		is_inside_dropable = true
-		body.modulate = Color(Color.GREEN, 1)
 		body_ref = body
 	elif body.is_in_group("trashbin"):
 		is_inside_trashbin = true
@@ -25,7 +24,6 @@ func _on_Area2D_body_entered(body: Node) -> void:
 func _on_Area2D_body_exited(body):
 	if body.is_in_group('Dropable'):
 		is_inside_dropable = false
-		body.modulate = Color(Color.DARK_OLIVE_GREEN, 0.7)
 	elif body.is_in_group("trashbin"):
 		is_inside_trashbin = false
 
@@ -42,7 +40,6 @@ func _on_area_2d_mouse_exited():
 func _on_area_2d_body_entered(body: StaticBody2D):
 	if body.is_in_group('Dropable'):
 		is_inside_dropable = true
-		body.modulate = Color(Color.GREEN, 1)
 		body_ref = body
 		has_item = true
 	elif body.is_in_group('trashbin'):
@@ -52,7 +49,6 @@ func _on_area_2d_body_entered(body: StaticBody2D):
 func _on_area_2d_body_exited(body: StaticBody2D):
 	if body.is_in_group('Dropable'):
 		is_inside_dropable = false
-		body.modulate = Color(Color.DARK_OLIVE_GREEN, 0.7)
 	elif body.is_in_group('trashbin'):
 		trashed = false
 
@@ -67,14 +63,18 @@ func _process(delta):
 			Global.is_dragging = false
 
 			if is_inside_dropable:
+				body_ref.queue_free()
 				var new_node = self.duplicate()
 				new_node.position = initialPos
 				get_parent().add_child(new_node)
+				
+				# Hide the static2dbody when item is dropped in the dropable area
 				
 
 			elif trashed:
 				queue_free()
 	elif has_item:
 		queue_free()
+
 
 				

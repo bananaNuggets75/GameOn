@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://kg4fi7sxosec"]
 
 [ext_resource type="Script" path="res://object_duplicate.gd" id="1_liu56"]
-[ext_resource type="Texture2D" uid="uid://8nd1yp4sra3y" path="res://Assets/iloilo/binakol bowl.png" id="1_lpjl7"]
+[ext_resource type="Texture2D" uid="uid://cji58cnqib11g" path="res://Assets/revised assets/iloilo/binakol-01.png" id="2_ao5fm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s202a"]
 size = Vector2(108, 51)
@@ -10,9 +10,9 @@ size = Vector2(108, 51)
 script = ExtResource("1_liu56")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(0.5, 0)
-scale = Vector2(1.32099, 1)
-texture = ExtResource("1_lpjl7")
+position = Vector2(-11, 0)
+scale = Vector2(0.045, 0.035)
+texture = ExtResource("2_ao5fm")
 
 [node name="Area2D" type="Area2D" parent="."]
 

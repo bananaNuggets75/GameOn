@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://buhvtb23qpi6p"]
 
 [ext_resource type="Script" path="res://object_duplicate.gd" id="1_vpepg"]
-[ext_resource type="Texture2D" uid="uid://rqsb57y7y53" path="res://Assets/iloilo/molo bowl.png" id="2_n2eed"]
+[ext_resource type="Texture2D" uid="uid://dxtiyk2v2fm1i" path="res://Assets/revised assets/iloilo/molo-01.png" id="2_u2jwy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a48ll"]
 size = Vector2(108, 52)
@@ -10,9 +10,9 @@ size = Vector2(108, 52)
 script = ExtResource("1_vpepg")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(0.5, 0)
-scale = Vector2(1.32099, 1)
-texture = ExtResource("2_n2eed")
+position = Vector2(22, -17)
+scale = Vector2(0.045, 0.034)
+texture = ExtResource("2_u2jwy")
 
 [node name="Area2D" type="Area2D" parent="."]
 

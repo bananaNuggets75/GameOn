@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbabsjl5ttv7d"]
+
+[ext_resource type="Texture2D" uid="uid://7kitoi3kigjb" path="res://Assets/character/straight face customer 01.png" id="1_pwl1l"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-3, -0.999999)
+scale = Vector2(0.697917, 0.623722)
+texture = ExtResource("1_pwl1l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Timer" type="Timer" parent="Sprite2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

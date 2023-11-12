@@ -1,9 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://clq6n11o6c7pc"]
+[gd_scene load_steps=18 format=3 uid="uid://clq6n11o6c7pc"]
 
+[ext_resource type="Texture2D" uid="uid://tmukym1he5oe" path="res://Assets/HighResIloilo-01-01.png" id="1_7sbya"]
 [ext_resource type="Script" path="res://Scripts/timer.gd" id="1_f5pr4"]
 [ext_resource type="PackedScene" uid="uid://brwksgk2rwlfj" path="res://Scene/draggable_object.tscn" id="1_oha5x"]
 [ext_resource type="Script" path="res://Pause/game_manager.gd" id="1_se4m7"]
 [ext_resource type="PackedScene" uid="uid://bahi2hob57v1w" path="res://Scene/cust_1.tscn" id="2_4w164"]
+[ext_resource type="PackedScene" uid="uid://blhhx1yd58tuw" path="res://Scene/object.tscn" id="2_j1vpo"]
 [ext_resource type="PackedScene" uid="uid://xooyfka4ruqs" path="res://Scene/cust_2.tscn" id="3_c16vd"]
 [ext_resource type="PackedScene" uid="uid://cr25ksld56hyc" path="res://Scene/trash_bin.tscn" id="3_guj63"]
 [ext_resource type="PackedScene" uid="uid://b8hsbq1wt1da5" path="res://Scene/coin_progress_bar.tscn" id="3_ylfmb"]
@@ -11,50 +13,56 @@
 [ext_resource type="PackedScene" uid="uid://cu8if8b2k7a5p" path="res://Scene/cust_3.tscn" id="4_gwm76"]
 [ext_resource type="AudioStream" uid="uid://bnafjgiaylniw" path="res://Assets/Bg music.mp3" id="5_q2mgb"]
 [ext_resource type="PackedScene" uid="uid://4eb0ben23awn" path="res://Scene/empty_bowl.tscn" id="6_thm3w"]
-[ext_resource type="Texture2D" uid="uid://uvxmdmhah7u6" path="res://Assets/background/iloilobg01-01.png" id="7_swpys"]
 [ext_resource type="PackedScene" uid="uid://kg4fi7sxosec" path="res://Scene/green_bowl.tscn" id="8_giuha"]
 [ext_resource type="PackedScene" uid="uid://bq8uyxyscrj4m" path="res://Scene/brown_bowl.tscn" id="9_ncxbt"]
 [ext_resource type="PackedScene" uid="uid://buhvtb23qpi6p" path="res://Scene/molo_soup.tscn" id="10_atxq3"]
 [ext_resource type="PackedScene" uid="uid://du34wu0f4nowj" path="res://Pause/pause_menu.tscn" id="16_3h3bf"]
 
-[node name="GameManager" type="Node2D"]
-process_mode = 3
+[node name="Game" type="Node2D"]
 script = ExtResource("1_se4m7")
 
 [node name="scene" type="Node2D" parent="."]
-process_mode = 1
 position = Vector2(0, 1)
 script = ExtResource("1_f5pr4")
 customers = Array[PackedScene]([ExtResource("2_4w164"), ExtResource("3_c16vd"), ExtResource("4_gwm76")])
-
-[node name="CanvasLayer" type="CanvasLayer" parent="scene"]
-
-[node name="PauseMenu" parent="scene/CanvasLayer" node_paths=PackedStringArray("game_manager") instance=ExtResource("16_3h3bf")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-scale = Vector2(3, 3)
-game_manager = NodePath("../../..")
-
-[node name="TextureRect" type="TextureRect" parent="scene"]
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 1149.0
-offset_bottom = 646.0
-texture = ExtResource("7_swpys")
-expand_mode = 1
 
 [node name="Timer" type="Timer" parent="scene"]
 process_callback = 0
 wait_time = 5.0
 autostart = true
 
+[node name="PauseMenu" parent="scene" instance=ExtResource("16_3h3bf")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1105.0
+offset_top = 117.0
+offset_right = 1105.0
+offset_bottom = 117.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="scene"]
 stream = ExtResource("5_q2mgb")
 volume_db = 2.0
 autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="scene"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1149.0
+offset_bottom = 646.0
+texture = ExtResource("1_7sbya")
+expand_mode = 1
+
+[node name="Area1" parent="scene" instance=ExtResource("2_j1vpo")]
+position = Vector2(150, 427)
+
+[node name="Area2" parent="scene" instance=ExtResource("2_j1vpo")]
+position = Vector2(440, 422)
+
+[node name="Area3" parent="scene" instance=ExtResource("2_j1vpo")]
+position = Vector2(741, 423)
 
 [node name="Cup1" parent="scene" instance=ExtResource("1_oha5x")]
 position = Vector2(505, 538)
@@ -81,7 +89,7 @@ position = Vector2(686, 599)
 position = Vector2(774, 598)
 
 [node name="Coin_Progress_Bar" parent="scene" instance=ExtResource("3_ylfmb")]
-position = Vector2(955, 241)
+position = Vector2(1007, 303)
 
 [node name="Biscocho1" parent="scene" groups=["draggable"] instance=ExtResource("4_aihh3")]
 position = Vector2(83, 562)
@@ -96,27 +104,15 @@ position = Vector2(359, 565)
 position = Vector2(1000, 696)
 
 [node name="Bowl1" parent="scene" groups=["draggable"] instance=ExtResource("6_thm3w")]
-position = Vector2(842, 371)
+position = Vector2(934, 384)
 
 [node name="Bowl2" parent="scene" instance=ExtResource("8_giuha")]
-position = Vector2(917, 391)
+position = Vector2(1071, 385)
 
 [node name="Bowl3" parent="scene" instance=ExtResource("9_ncxbt")]
-position = Vector2(1015, 373)
+position = Vector2(936, 458)
 
 [node name="Bowl4" parent="scene" instance=ExtResource("10_atxq3")]
-position = Vector2(1095, 392)
-
-[node name="Bowl5" parent="scene" groups=["draggable"] instance=ExtResource("6_thm3w")]
-position = Vector2(847, 419)
-
-[node name="Bowl6" parent="scene" instance=ExtResource("8_giuha")]
-position = Vector2(913, 446)
-
-[node name="Bowl7" parent="scene" instance=ExtResource("9_ncxbt")]
-position = Vector2(1016, 420)
-
-[node name="Bowl8" parent="scene" instance=ExtResource("10_atxq3")]
-position = Vector2(1096, 450)
+position = Vector2(1071, 458)
 
 [connection signal="timeout" from="scene/Timer" to="scene" method="_on_timer_timeout"]

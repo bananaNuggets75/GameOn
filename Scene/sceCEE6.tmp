@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://clq6n11o6c7pc"]
+
+[ext_resource type="Texture2D" uid="uid://tmukym1he5oe" path="res://Assets/HighResIloilo-01-01.png" id="1_7sbya"]
+[ext_resource type="Script" path="res://Scripts/timer.gd" id="1_f5pr4"]
+[ext_resource type="PackedScene" uid="uid://brwksgk2rwlfj" path="res://Scene/draggable_object.tscn" id="1_oha5x"]
+[ext_resource type="AudioStream" uid="uid://w5hj430qydqp" path="res://Assets/loading screen trivia and facts.mp3" id="1_x3xyw"]
+[ext_resource type="PackedScene" uid="uid://blhhx1yd58tuw" path="res://Scene/object.tscn" id="2_j1vpo"]
+[ext_resource type="PackedScene" uid="uid://cr25ksld56hyc" path="res://Scene/trash_bin.tscn" id="3_guj63"]
+[ext_resource type="PackedScene" uid="uid://b8hsbq1wt1da5" path="res://Scene/coin_progress_bar.tscn" id="3_ylfmb"]
+[ext_resource type="PackedScene" uid="uid://ceaglevr1pown" path="res://Scene/biscoho.tscn" id="4_aihh3"]
+[ext_resource type="PackedScene" uid="uid://4eb0ben23awn" path="res://Scene/empty_bowl.tscn" id="6_thm3w"]
+[ext_resource type="PackedScene" uid="uid://kg4fi7sxosec" path="res://Scene/green_bowl.tscn" id="8_giuha"]
+[ext_resource type="PackedScene" uid="uid://bq8uyxyscrj4m" path="res://Scene/brown_bowl.tscn" id="9_ncxbt"]
+[ext_resource type="PackedScene" uid="uid://buhvtb23qpi6p" path="res://Scene/molo_soup.tscn" id="10_atxq3"]
+
+[node name="scene" type="Node2D"]
+position = Vector2(0, 1)
+script = ExtResource("1_f5pr4")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+autostart = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_x3xyw")
+volume_db = 2.0
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1149.0
+offset_bottom = 646.0
+texture = ExtResource("1_7sbya")
+expand_mode = 1
+
+[node name="Area1" parent="." instance=ExtResource("2_j1vpo")]
+position = Vector2(150, 427)
+
+[node name="Area2" parent="." instance=ExtResource("2_j1vpo")]
+position = Vector2(440, 422)
+
+[node name="Area3" parent="." instance=ExtResource("2_j1vpo")]
+position = Vector2(741, 423)
+
+[node name="Cup1" parent="." instance=ExtResource("1_oha5x")]
+position = Vector2(505, 538)
+
+[node name="Cup2" parent="." instance=ExtResource("1_oha5x")]
+position = Vector2(595, 537)
+
+[node name="Cup3" parent="." instance=ExtResource("1_oha5x")]
+position = Vector2(686, 537)
+
+[node name="Cup4" parent="." instance=ExtResource("1_oha5x")]
+position = Vector2(774, 536)
+
+[node name="Cup5" parent="." instance=ExtResource("1_oha5x")]
+position = Vector2(505, 599)
+
+[node name="Cup6" parent="." instance=ExtResource("1_oha5x")]
+position = Vector2(594, 599)
+
+[node name="Cup7" parent="." instance=ExtResource("1_oha5x")]
+position = Vector2(686, 599)
+
+[node name="Cup8" parent="." instance=ExtResource("1_oha5x")]
+position = Vector2(774, 598)
+
+[node name="Coin_Progress_Bar" parent="." instance=ExtResource("3_ylfmb")]
+position = Vector2(1007, 303)
+
+[node name="Biscocho1" parent="." groups=["draggable"] instance=ExtResource("4_aihh3")]
+position = Vector2(83, 562)
+
+[node name="Biscocho2" parent="." groups=["draggable"] instance=ExtResource("4_aihh3")]
+position = Vector2(219, 564)
+
+[node name="Biscocho3" parent="." groups=["draggable"] instance=ExtResource("4_aihh3")]
+position = Vector2(359, 565)
+
+[node name="TrashBin" parent="." instance=ExtResource("3_guj63")]
+position = Vector2(1000, 696)
+
+[node name="Bowl1" parent="." groups=["draggable"] instance=ExtResource("6_thm3w")]
+position = Vector2(934, 384)
+
+[node name="Bowl2" parent="." instance=ExtResource("8_giuha")]
+position = Vector2(1071, 385)
+
+[node name="Bowl3" parent="." instance=ExtResource("9_ncxbt")]
+position = Vector2(936, 458)
+
+[node name="Bowl4" parent="." instance=ExtResource("10_atxq3")]
+position = Vector2(1071, 458)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,14 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8hsbq1wt1da5"]
+[gd_scene load_steps=6 format=3 uid="uid://b8hsbq1wt1da5"]
 
 [ext_resource type="Texture2D" uid="uid://btpal7ctnbso" path="res://Assets/iloilo/empty jar.png" id="1_2dbk1"]
 [ext_resource type="Script" path="res://Scripts/coin_progress_bar.gd" id="1_3ply8"]
 [ext_resource type="Texture2D" uid="uid://drx4h6uj2pw01" path="res://Assets/iloilo/full jar.png" id="2_kxnsl"]
+[ext_resource type="Script" path="res://coinprogress.gd" id="4_ngf5d"]
 
-[node name="TextureProgressBar" type="TextureProgressBar"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrjnx"]
+size = Vector2(109, 147)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["CoinJar"]]
+position = Vector2(-53, -76)
+script = ExtResource("1_3ply8")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." groups=["CoinJar"]]
+offset_top = 1.0
 offset_right = 107.0
-offset_bottom = 148.0
+offset_bottom = 149.0
 step = 5.0
 fill_mode = 3
 texture_under = ExtResource("1_2dbk1")
 texture_progress = ExtResource("2_kxnsl")
-script = ExtResource("1_3ply8")
+script = ExtResource("4_ngf5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["CoinJar"]]
+position = Vector2(53, 73)
+shape = SubResource("RectangleShape2D_mrjnx")
+
+[connection signal="value_changed" from="TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]

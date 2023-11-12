@@ -1,18 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://xooyfka4ruqs"]
+[gd_scene load_steps=5 format=3 uid="uid://xooyfka4ruqs"]
 
-[ext_resource type="Script" path="res://customers.gd" id="1_4s45c"]
+[ext_resource type="Script" path="res://customer_drag.gd" id="1_20xbw"]
 [ext_resource type="Texture2D" uid="uid://dn7sopulmekh6" path="res://Assets/character/happy customer 01.png" id="1_sbxtc"]
+[ext_resource type="Texture2D" uid="uid://k7qfmhlrn17l" path="res://Assets/bubble chats_1.png" id="3_o80qq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3pj44"]
 size = Vector2(185, 352)
 
-[node name="Cust2" type="Area2D"]
-script = ExtResource("1_4s45c")
+[node name="StaticBody2D" type="StaticBody2D" groups=["Dropable"]]
+script = ExtResource("1_20xbw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Dropable"]]
+position = Vector2(-1.5, -2)
+shape = SubResource("RectangleShape2D_3pj44")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Dropable"]]
 scale = Vector2(0.773833, 0.708502)
 texture = ExtResource("1_sbxtc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -2)
-shape = SubResource("RectangleShape2D_3pj44")
+[node name="TextureRect" type="TextureRect" parent="." groups=["Dropable"]]
+offset_left = -92.0
+offset_top = -314.0
+offset_right = 94.0
+offset_bottom = -93.0
+texture = ExtResource("3_o80qq")
+expand_mode = 1

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://4eb0ben23awn"]
 
 [ext_resource type="Script" path="res://object_duplicate.gd" id="1_pvgyd"]
-[ext_resource type="Texture2D" uid="uid://b0c6t0ttsn4np" path="res://Assets/iloilo/kbl bowl.png" id="2_fc8bp"]
+[ext_resource type="Texture2D" uid="uid://gvda85ptnd4m" path="res://Assets/revised assets/iloilo/kbl-01.png" id="2_go0f8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iuiau"]
 size = Vector2(104.5, 49)
@@ -10,9 +10,9 @@ size = Vector2(104.5, 49)
 script = ExtResource("1_pvgyd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.5, 0)
-scale = Vector2(1.32099, 1)
-texture = ExtResource("2_fc8bp")
+position = Vector2(-8, -10)
+scale = Vector2(0.045, 0.034)
+texture = ExtResource("2_go0f8")
 
 [node name="Area2D" type="Area2D" parent="."]
 
